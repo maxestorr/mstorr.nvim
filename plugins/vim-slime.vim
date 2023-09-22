@@ -1,2 +1,0 @@
-Plug 'jpalardy/vim-slime'
-
