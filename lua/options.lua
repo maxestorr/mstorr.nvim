@@ -3,7 +3,6 @@
 -- Changing Neovim's option settings
 -- See `:help vim.o`
 
-
 vim.o.mouse = 'a'
 
 vim.o.number = true
