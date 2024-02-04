@@ -12,6 +12,7 @@ My Neovim config.
     - [X] Color scheme
     - [X] Autocomplete (hrsh7th/nvim-cmp)
     - [ ] LSP
+        - Automatically install LSP clients (williamboman/mason)
         - Autolaunch an LSP client on filetype open (neovim/nvim-lspconfig)
         - Bridge the gap between mason and lspconfig (williamboman/mason-lspconfig)
     - [X] Treesitter (syntax map for other plugins to use)

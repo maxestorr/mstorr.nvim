@@ -23,10 +23,11 @@ vim.opt.rtp:prepend(lazypath)
 require 'options'
 require 'remaps'
 require("lazy").setup({
-    { import = "plugins" }
+    { import = "plugins" },
+    { import = "plugins.lsp" },
 }, {
     install = {
-        colorscheme = { "tokyonight-moon" }
+        colorscheme = { "tokyonight-moon" },
     },
     checker = {
         enabled = true,
