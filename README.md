@@ -12,7 +12,7 @@ My Neovim config.
     - [ ] 
 - Essential plugin
     - [ ] Autocomplete
-    - [ ] Treesitter
+    - [X] Treesitter (syntax map for other plugins to use)
     - [ ] LSP
     - [ ] Telescope
     - [ ] Harpoon
