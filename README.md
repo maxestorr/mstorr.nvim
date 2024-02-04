@@ -4,20 +4,25 @@ My Neovim config.
 
 ## Includes:
 
-- Basics
-    - [X] Basic options and remaps
+- Basic config
+    - [X] Sensible default options
+    - [X] Sensible default remaps
+    - [ ] 
+- Essential features
     - [X] Color scheme
-    - [X] File explorer (Neo-Tree)
-    - [ ] 
-- Essential plugins
-    - [ ] Autocomplete
-    - [X] Treesitter (syntax map for other plugins to use)
     - [ ] LSP
+        - Autolaunch an LSP client on filetype open (neovim/nvim-lspconfig)
+        - Bridge the gap between mason and lspconfig (williamboman/mason-lspconfig)
+    - [ ] Autocomplete
+        - hrsh7th/nvim-cmp
+    - [X] Treesitter (syntax map for other plugins to use)
+    - [X] File explorer (Neo-Tree)
+        - LSP client package manager (williamboman/mason.nvim)
     - [X] Telescope
-    - [ ] Harpoon
-    - [X] Which-key
+    - [X] Harpoon
     - [ ] 
-- Nice to have plugins
+- Nice to have features
+    - [X] Which-key
     - [ ] Git signs
     - [ ] Fugitive
     - [ ] Lazygit
