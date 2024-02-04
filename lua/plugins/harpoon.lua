@@ -5,7 +5,7 @@ return {
     },
     keys = {
         { "<leader>ha", ':lua require("harpoon.mark").add_file()<CR>', desc = "[H]arpoon [m]ark" },
-        { "<leader>hf", ':lua require("harpoon.ui").toggle_quick_menu()<CR>', desc = "[H]arpoon [m]enu"},
+        { "<leader>hf", ':lua require("harpoon.ui").toggle_quick_menu()<CR>', desc = "[H]arpoon [f]ind files"},
 
         { "<leader>1", ':lua require("harpoon.ui").nav_file(1)<CR>', desc = "[H]arpoon file [1]"},
         { "<leader>2", ':lua require("harpoon.ui").nav_file(2)<CR>', desc = "[H]arpoon file [2]"},

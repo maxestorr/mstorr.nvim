@@ -1,6 +1,6 @@
 return {
   {
-    -- TODO: Find out what this does?
+    -- Make vim.ui.select api use telescope by default
     "nvim-telescope/telescope-ui-select.nvim",
   },
   {
@@ -16,9 +16,8 @@ return {
         },
       })
       local builtin = require("telescope.builtin")
-      -- TODO: Find out how to add descriptions to below keybinds
-      vim.keymap.set("n", "<leader>sf", builtin.find_files, {})
-      vim.keymap.set("n", "<leader>sg", builtin.live_grep, {})
+      vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch for [f]iles" })
+      vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch via [g]rep" })
 
       require("telescope").load_extension("ui-select")
     end,

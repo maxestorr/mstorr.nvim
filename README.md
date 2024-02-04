@@ -10,8 +10,7 @@ My Neovim config.
     - [ ] 
 - Essential features
     - [X] Color scheme
-    - [ ] Autocomplete
-        - hrsh7th/nvim-cmp
+    - [X] Autocomplete (hrsh7th/nvim-cmp)
     - [ ] LSP
         - Autolaunch an LSP client on filetype open (neovim/nvim-lspconfig)
         - Bridge the gap between mason and lspconfig (williamboman/mason-lspconfig)
@@ -28,5 +27,6 @@ My Neovim config.
     - [ ] Lazygit
     - [ ] Linter
     - [ ] Formatter
+    - [ ] Status line (lualine)
     - [ ] 
 

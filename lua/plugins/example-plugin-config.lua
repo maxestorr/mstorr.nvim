@@ -26,22 +26,37 @@ return {}
 --       "nvim-tree/nvim-web-devicons",
 --       "MunifTanjim/nui.nvim",
 --     },
---     -- Keybinds as a cmd string, removes syntax highlighting but works well
---     -- with the lazy loading `keys` functionality
+--     -- Keybinds as a cmd string, strings mess up syntax highlighting but
+--     -- allows for lazy loading the plugin
 --     keys = {
 --         {"<leader>e", ":Neotree toggle<CR>", desc = "Toggle filetree explorer"}
 --     },
 -- }
 
 -- Keybinds set in config, this allows syntax highlighting
--- but they are run at nvim startup, not lazyloaded
+-- but the plugin is run at nvim startup, not lazyloaded
 --return {
---    'ThePrimeagen/harpoon',
---    dependencies = {
---        'nvim-lua/plenary.nvim' 
---    },
---    config  = function()
---        vim.keymap.set("n", "<leader>ha", require("harpoon.mark").add_file)
---        vim.keymap.set("n", "<leader>hf", require("harpoon.ui").toggle_quick_menu)
---    end
+--  {
+--    -- Make vim.ui.select api use telescope by default
+--    "nvim-telescope/telescope-ui-select.nvim",
+--  },
+--  {
+--    "nvim-telescope/telescope.nvim",
+--    branch = "0.1.x",
+--    dependencies = { "nvim-lua/plenary.nvim" },
+--    config = function()
+--      require("telescope").setup({
+--        extensions = {
+--          ["ui-select"] = {
+--            require("telescope.themes").get_dropdown({}),
+--          },
+--        },
+--      })
+--      local builtin = require("telescope.builtin")
+--      vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch for [f]iles" })
+--      vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch via [g]rep" })
+--
+--      require("telescope").load_extension("ui-select")
+--    end,
+--  },
 --}
