@@ -2,25 +2,26 @@
 
 My Neovim config.
 
-## TODO:
+## Includes:
 
 - Basics
     - [X] Basic options and remaps
     - [X] Color scheme
     - [X] File explorer (Neo-Tree)
     - [ ] 
-    - [ ] 
-- Essential plugin
+- Essential plugins
     - [ ] Autocomplete
     - [X] Treesitter (syntax map for other plugins to use)
     - [ ] LSP
-    - [ ] Telescope
+    - [X] Telescope
     - [ ] Harpoon
-    - [ ] Which-key
+    - [X] Which-key
     - [ ] 
 - Nice to have plugins
     - [ ] Git signs
     - [ ] Fugitive
     - [ ] Lazygit
+    - [ ] Linter
+    - [ ] Formatter
     - [ ] 
 

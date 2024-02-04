@@ -5,7 +5,6 @@ return {}
 -- via `config = function()...`.
 --
 -- return {
---     {
 --     "folke/tokyonight.nvim",
 --     lazy = false,
 --     priority = 1000,
@@ -13,7 +12,6 @@ return {}
 --     config = function()
 --         vim.cmd[[colorscheme tokyonight-moon]]
 --     end,
---     }
 -- }
 
 -- Basic plugin with dependencies and a specific branch.
@@ -28,8 +26,22 @@ return {}
 --       "nvim-tree/nvim-web-devicons",
 --       "MunifTanjim/nui.nvim",
 --     },
+--     -- Keybinds as a cmd string, removes syntax highlighting but works well
+--     -- with the lazy loading `keys` functionality
 --     keys = {
 --         {"<leader>e", ":Neotree toggle<CR>", desc = "Toggle filetree explorer"}
 --     },
 -- }
---
+
+-- Keybinds set in config, this allows syntax highlighting
+-- but they are run at nvim startup, not lazyloaded
+--return {
+--    'ThePrimeagen/harpoon',
+--    dependencies = {
+--        'nvim-lua/plenary.nvim' 
+--    },
+--    config  = function()
+--        vim.keymap.set("n", "<leader>ha", require("harpoon.mark").add_file)
+--        vim.keymap.set("n", "<leader>hf", require("harpoon.ui").toggle_quick_menu)
+--    end
+--}
