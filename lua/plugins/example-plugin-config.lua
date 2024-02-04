@@ -1,0 +1,35 @@
+return {}
+
+-- Basic plugin, no options.
+-- Requires a command to be run at runtime to set the colorscheme
+-- via `config = function()...`.
+--
+-- return {
+--     {
+--     "folke/tokyonight.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     opts = {},
+--     config = function()
+--         vim.cmd[[colorscheme tokyonight-moon]]
+--     end,
+--     }
+-- }
+
+-- Basic plugin with dependencies and a specific branch.
+-- Lazy loaded to activate only on a specific keypress.
+-- This works well for very fast to load plugins.
+--
+-- return {
+--     "nvim-neo-tree/neo-tree.nvim",
+--     branch = "v3.x",
+--     dependencies = {
+--       "nvim-lua/plenary.nvim",
+--       "nvim-tree/nvim-web-devicons",
+--       "MunifTanjim/nui.nvim",
+--     },
+--     keys = {
+--         {"<leader>e", ":Neotree toggle<CR>", desc = "Toggle filetree explorer"}
+--     },
+-- }
+--

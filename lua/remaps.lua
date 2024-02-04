@@ -35,7 +35,7 @@ vnoremap("<", "<gv")
 vnoremap("J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
 vnoremap("K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
 
-xnoremap("<leader>p", '"_dp', { desc = "Paste without overriding current buffer" })
+xnoremap("<leader>p", '"_dP', { desc = "Paste without overriding current buffer" })
 
 nnoremap("<leader>y", [["+y]], { desc = "Copy selection to clipboard" })
 vnoremap("<leader>y", [["+y]], { desc = "Copy selection to clipboard" })
