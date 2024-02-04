@@ -16,9 +16,11 @@ My Neovim config.
     - [ ] LSP
     - [ ] Telescope
     - [ ] Harpoon
-    - [ ] 
+    - [ ] Which-key
     - [ ] 
 - Nice to have plugins
-    - [ ] 
+    - [ ] Git signs
+    - [ ] Fugitive
+    - [ ] Lazygit
     - [ ] 
 
