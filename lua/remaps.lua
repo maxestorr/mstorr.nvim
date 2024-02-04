@@ -16,21 +16,22 @@ local expr = { expr = true }
 
 inoremap("jk", "<esc>", { desc = "Exit insert mode" })
 
+-- Easier window navigation
 nnoremap("<C-L>", "<C-W><C-L>", { desc = "Select window right" })
 nnoremap("<C-H>", "<C-W><C-H>", { desc = "Select window left" })
 nnoremap("<C-K>", "<C-W><C-K>", { desc = "Select window up" })
 nnoremap("<C-J>", "<C-W><C-J>", { desc = "Select window down" })
 
--- Keep window centered when navigating
-nnoremap("<C-d>", "<C-d>zz") -- Down half page
-nnoremap("<C-u>", "<C-u>zz") -- Up half page
-nnoremap("n", "nzzzv") -- Next search item
-nnoremap("N", "Nzzzv") -- Previous search item
+-- Keep window centered when navigating buffer
+nnoremap("<C-d>", "<C-d>zz", { desc = "Down half page" })
+nnoremap("<C-u>", "<C-u>zz", { desc = "Up half page" })
+nnoremap("n", "nzzzv", { desc = "Next search item" })
+nnoremap("N", "Nzzzv", { desc = "Previous search item" })
 
--- Keep cursor position / selection when joining or indenting
-nnoremap("J", "mzJ`z")
-vnoremap(">", ">gv")
-vnoremap("<", "<gv")
+-- Keep cursor selection when joining or indenting
+nnoremap("J", "mzJ`z", { desc = "Join selection with the next line" })
+vnoremap(">", ">gv", { desc = "Indent selection" })
+vnoremap("<", "<gv", { desc = "Dedent selection" })
 
 vnoremap("J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
 vnoremap("K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
