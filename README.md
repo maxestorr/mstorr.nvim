@@ -36,5 +36,8 @@ My Neovim config.
     - [X] Tmux resurrect should remember the nvim session
         - vim-prosession, search for sessions with <leader>sp
     - [ ] Noice (nicer cmd input using floating window)
+    - [ ] rcarriga/nvim-notify
+    - [ ] Surround plugin
+    - [ ] Comment plugin
     - [ ] 
 

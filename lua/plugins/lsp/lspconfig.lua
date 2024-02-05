@@ -10,6 +10,7 @@ return {
 
         local keymap = vim.keymap
         local opts = { noremap = true, silent = true }
+        local capabilities = cmp_nvim_lsp.default_capabilities()
 
         local on_attach = function(client, bufnr)
             opts.buffer = bufnr
@@ -22,18 +23,16 @@ return {
             keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
             keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
             keymap.set('n', '<space>wl', function()
-              print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+                print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
             end, opts)
             keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
             keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
             keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
             keymap.set('n', 'gr', vim.lsp.buf.references, opts)
             keymap.set('n', '<space>f', function()
-              vim.lsp.buf.format { async = true }
+                vim.lsp.buf.format { async = true }
             end, opts)
         end
-
-        local capabilities = cmp_nvim_lsp.default_capabilities()
 
         lspconfig["lua_ls"].setup({
             capabilities = capabilities,
@@ -41,7 +40,7 @@ return {
             settings = {
                 Lua = {
                     diagonstics = {
-                        -- Recognise the global variable vim
+                        -- Ignore undefined global variables in this list
                         globals = { "vim" },
                     },
                     -- Make the server aware of Neovim runtime files
@@ -85,6 +84,5 @@ return {
             capabilities = capabilities,
             on_attach = on_attach,
         })
-
     end,
 }
