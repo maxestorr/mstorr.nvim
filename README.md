@@ -30,7 +30,7 @@ My Neovim config.
     - [ ] Formatter
     - [ ] Status line (lualine)
         - [ ] Show lazy plugins that need updating in lualine
-    - [ ] Make ui-select and ui-input use pretty inputs
+    - [X] Make ui-select and ui-input use pretty inputs
         - Telescope plugin
         - Dressing.nvim
     - [ ] 
