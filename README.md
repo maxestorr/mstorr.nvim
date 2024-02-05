@@ -33,5 +33,8 @@ My Neovim config.
     - [X] Make ui-select and ui-input use pretty inputs
         - Telescope plugin
         - Dressing.nvim
+    - [X] Tmux resurrect should remember the nvim session
+        - vim-prosession, search for sessions with <leader>sp
+    - [ ] Noice (nicer cmd input using floating window)
     - [ ] 
 

@@ -4,7 +4,7 @@ return {
         'nvim-lua/plenary.nvim'
     },
     keys = {
-        { "<leader>ha", ':lua require("harpoon.mark").add_file()<CR>', desc = "[H]arpoon [m]ark" },
+        { "<leader>ha", ':lua require("harpoon.mark").add_file()<CR>', desc = "[H]arpoon [a]dd" },
         { "<leader>hf", ':lua require("harpoon.ui").toggle_quick_menu()<CR>', desc = "[H]arpoon [f]ind files"},
 
         { "<leader>1", ':lua require("harpoon.ui").nav_file(1)<CR>', desc = "[H]arpoon file [1]"},
