@@ -37,7 +37,8 @@ My Neovim config.
         - vim-prosession, search for sessions with <leader>sp
     - [ ] Noice (nicer cmd input using floating window)
     - [ ] rcarriga/nvim-notify
-    - [ ] Surround plugin
-    - [ ] Comment plugin
+    - [X] mini.surround and mini.comment
+        - [X] Surround plugin
+        - [X] Comment plugin
     - [ ] 
 
