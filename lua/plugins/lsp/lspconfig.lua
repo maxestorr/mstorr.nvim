@@ -17,9 +17,11 @@ return {
 
             keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
             keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+            -- Todo: Work out the difference between buf.hover and buf.signature_help
+            -- Todo: Change <C-K> keybind, clashes with select window up
             keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-            keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
             keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+            keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
             keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
             keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
             keymap.set('n', '<space>wl', function()

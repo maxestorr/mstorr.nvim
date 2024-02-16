@@ -1,6 +1,7 @@
 -- TODO: I'm meant to set vim.notify = require("notify")
 --      but I'm not sure about the best place to do this yet
 --      this sets vim's default notifications to use nvim-notify
+-- TODO: This plugin doesn't seem to work
 return {
     'rcarriga/nvim-notify',
     dependencies = { 'mrded/nvim-lsp-notify' },
