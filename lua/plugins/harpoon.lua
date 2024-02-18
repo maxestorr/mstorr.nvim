@@ -12,8 +12,5 @@ return {
         { "<leader>3", ':lua require("harpoon.ui").nav_file(3)<CR>', desc = "[H]arpoon file [3]"},
         { "<leader>4", ':lua require("harpoon.ui").nav_file(4)<CR>', desc = "[H]arpoon file [4]"},
         { "<leader>5", ':lua require("harpoon.ui").nav_file(5)<CR>', desc = "[H]arpoon file [5]"},
-
-        { "<leader>n", ':lua require("harpoon.ui").nav_next()<CR>', desc = "Harpoon [n]ext file" },
-        { "<leader>p", ':lua require("harpoon.ui").nav_prev()<CR>', desc = "Harpoon [p]revious file" },
     },
 }
