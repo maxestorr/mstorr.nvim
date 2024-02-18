@@ -22,10 +22,9 @@ My Neovim config.
     - [X] Telescope
     - [X] Harpoon
     - [X] Which-key
-    - [ ] Git signs
-    - [ ] Git gutter
-    - [ ] Fugitive
-    - [ ] Lazygit
+    - [X] Git signs
+    - [X] Lazygit
+    - [X] Git blame
     - [ ] Linter
     - [ ] Formatter
     - [ ] Status line (lualine)

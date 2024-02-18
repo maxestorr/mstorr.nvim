@@ -22,6 +22,7 @@ require 'remaps'
 require("lazy").setup({
     { import = "plugins" },
     { import = "plugins.lsp" },
+    { import = "plugins.git" },
 }, {
     install = {
         colorscheme = { "tokyonight-moon" },
