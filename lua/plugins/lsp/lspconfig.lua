@@ -15,6 +15,7 @@ return {
         local on_attach = function(client, bufnr)
             opts.buffer = bufnr
 
+            -- Todo: include doc string for below definition
             keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
             keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
             -- Todo: Work out the difference between buf.hover and buf.signature_help
