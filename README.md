@@ -26,8 +26,8 @@ My Neovim config.
     - [X] Git signs
     - [X] Lazygit
     - [X] Git blame
-    - [ ] Status line (lualine)
-        - [ ] Show lazy plugins that need updating in lualine
+    - [X] Status line (lualine)
+        - [X] Show lazy plugins that need updating in lualine
     - [X] Make ui-select and ui-input use pretty inputs
         - Telescope plugin
         - Dressing.nvim
