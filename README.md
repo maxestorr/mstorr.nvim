@@ -7,7 +7,6 @@ My Neovim config.
 - Basic config
     - [X] Sensible default options
     - [X] Sensible default remaps
-    - [ ] 
 - Essential features
     - [X] Color scheme
     - [X] Autocomplete (hrsh7th/nvim-cmp)
@@ -17,7 +16,9 @@ My Neovim config.
         - Bridge the gap between mason and lspconfig (williamboman/mason-lspconfig)
     - [X] Treesitter (syntax map for other plugins to use)
     - [X] File explorer (Neo-Tree)
-    - [ ] 
+    - [ ] Linter
+    - [ ] Formatter
+    - [ ] Undotree
 - Nice to have features
     - [X] Telescope
     - [X] Harpoon
@@ -25,8 +26,6 @@ My Neovim config.
     - [X] Git signs
     - [X] Lazygit
     - [X] Git blame
-    - [ ] Linter
-    - [ ] Formatter
     - [ ] Status line (lualine)
         - [ ] Show lazy plugins that need updating in lualine
     - [X] Make ui-select and ui-input use pretty inputs
@@ -39,5 +38,9 @@ My Neovim config.
     - [X] mini.surround and mini.comment
         - [X] Surround plugin
         - [X] Comment plugin
+    - [ ] trouble.nvim, pretty list of:
+        - Diagnostics
+        - quickfix list
+        - location list
     - [ ] 
 
