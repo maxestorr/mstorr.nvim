@@ -34,6 +34,7 @@ vim.o.undofile = true
 
 -- Indent wrapped lines
 vim.o.breakindent = true
+vim.o.wrap = false
 
 -- Show autocomplete menu but require manual selection
 vim.o.completeopt = 'menuone,noselect'
