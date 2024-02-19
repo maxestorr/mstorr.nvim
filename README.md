@@ -18,7 +18,7 @@ My Neovim config.
     - [X] File explorer (Neo-Tree)
     - [ ] Linter
     - [ ] Formatter
-    - [ ] Undotree
+    - [X] Undotree
 - Nice to have features
     - [X] Telescope
     - [X] Harpoon
