@@ -42,5 +42,8 @@ My Neovim config.
         - Diagnostics
         - quickfix list
         - location list
+    - [X] Indent guide
+        - indent-blankline for the guides
+        - mini.indentscope for an animation that highlights scope
     - [ ] 
 
