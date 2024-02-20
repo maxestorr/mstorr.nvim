@@ -45,5 +45,5 @@ My Neovim config.
     - [X] Indent guide
         - indent-blankline for the guides
         - mini.indentscope for an animation that highlights scope
-    - [ ] 
+    - [X] Autopairs
 
