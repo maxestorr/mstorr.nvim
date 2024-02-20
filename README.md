@@ -38,10 +38,12 @@ My Neovim config.
     - [X] mini.surround and mini.comment
         - [X] Surround plugin
         - [X] Comment plugin
-    - [ ] trouble.nvim, pretty list of:
+    - [X] trouble.nvim, pretty list of:
         - Diagnostics
         - quickfix list
         - location list
+    - [X] todo-comments.nvim
+        - Adds todo and other comments to quickfix list
     - [X] Indent guide
         - indent-blankline for the guides
         - mini.indentscope for an animation that highlights scope
