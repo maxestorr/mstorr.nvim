@@ -16,8 +16,8 @@ My Neovim config.
         - Bridge the gap between mason and lspconfig (williamboman/mason-lspconfig)
     - [X] Treesitter (syntax map for other plugins to use)
     - [X] File explorer (Neo-Tree)
-    - [ ] Linter
-    - [ ] Formatter
+    - [X] Linter
+    - [X] Formatter
     - [X] Undotree
 - Nice to have features
     - [X] Telescope
