@@ -4,6 +4,7 @@ return {
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
     },
+
     config = function()
         local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -12,6 +13,7 @@ return {
         local opts = { noremap = true, silent = true }
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
+        -- TODO: Look into using default nvim-lspconfig augroup
         local on_attach = function(client, bufnr)
             opts.buffer = bufnr
 
@@ -32,12 +34,14 @@ return {
             keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
             keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
             keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+            -- TODO: This is currently applying format function twice
+            -- when multiple LSP clients are attached, e.g. an lua_ls and null-ls
             keymap.set('n', '<space>f', function()
                 vim.lsp.buf.format { async = true }
             end, opts)
         end
 
-        lspconfig["lua_ls"].setup({
+        lspconfig.lua_ls.setup({
             capabilities = capabilities,
             on_attach = on_attach,
             settings = {
@@ -58,32 +62,32 @@ return {
             }
         })
 
-        lspconfig["ansiblels"].setup({
+        lspconfig.ansiblels.setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })
 
-        lspconfig["bashls"].setup({
+        lspconfig.bashls.setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })
 
-        lspconfig["jsonls"].setup({
+        lspconfig.jsonls.setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })
 
-        lspconfig["pyright"].setup({
+        lspconfig.pyright.setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })
 
-        lspconfig["sqlls"].setup({
+        lspconfig.sqlls.setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })
 
-        lspconfig["yamlls"].setup({
+        lspconfig.yamlls.setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })
