@@ -44,7 +44,7 @@ nnoremap("<leader>Y", [["+Y]], { desc = "Copy selection to clipboard" })
 nnoremap("<leader>d", [["_d]], { desc = "Delete selection to clipboard" })
 vnoremap("<leader>d", [["_d]], { desc = "Delete selection to clipboard" })
 
--- I don't know what this does it was in kickstart
+-- <Space> is mapped to <Right> by default, unset this
 nnoremap("<Space>", "<Nop>", silent)
 vnoremap("<Space>", "<Nop>", silent)
 
