@@ -1,6 +1,6 @@
 local M = {}
 
--- Todo: import & use keymap in lazy plugin configs
+-- TODO: import & use keymap in lazy plugin configs
 local function bind(op, outer_opts)
     outer_opts = outer_opts or { noremap = true, silent = true }
     return function(lhs, rhs, opts)

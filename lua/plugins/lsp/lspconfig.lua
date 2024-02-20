@@ -15,11 +15,11 @@ return {
         local on_attach = function(client, bufnr)
             opts.buffer = bufnr
 
-            -- Todo: include doc string for below definition
+            -- TODO: include doc string for below definition
             keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
             keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-            -- Todo: Work out the difference between buf.hover and buf.signature_help
-            -- Todo: Change <C-K> keybind, clashes with select window up
+            -- TODO: Work out the difference between buf.hover and buf.signature_help
+            -- TODO: Change <C-K> keybind, clashes with select window up
             keymap.set('n', 'K', vim.lsp.buf.hover, opts)
             keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
             keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
