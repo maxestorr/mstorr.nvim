@@ -4,12 +4,12 @@
 -- See `:help vim.keymap.set()`
 
 -- Utility functions to reduce repetition of vim.keymap.set()
-local Remap = require("keymap")
-local nnoremap = Remap.nnoremap
-local inoremap = Remap.inoremap
-local vnoremap = Remap.vnoremap
-local xnoremap = Remap.xnoremap
-local tnoremap = Remap.tnoremap
+local remap = require("keymap")
+local nnoremap = remap.nnoremap
+local inoremap = remap.inoremap
+local vnoremap = remap.vnoremap
+local xnoremap = remap.xnoremap
+local tnoremap = remap.tnoremap
 
 local silent = { silent = true }
 local expr = { expr = true }
