@@ -43,6 +43,7 @@ return {
         keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch for [f]iles" })
         keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch via [g]rep" })
         keymap.set("n", "<leader>sm", builtin.man_pages, { desc = "[S]earch [m]an pages" })
+        keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [h]elp files" })
         keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[S]earch [b]uffers" })
         keymap.set("n", "<leader>sp", ":Telescope prosession<CR>", { desc = "[S]earch vim [p]rosessions" })
 
