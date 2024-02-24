@@ -24,6 +24,7 @@ vim.o.smartcase = true
 
 vim.o.signcolumn = 'yes'
 vim.o.colorcolumn = '80'
+vim.o.laststatus = 3
 
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
