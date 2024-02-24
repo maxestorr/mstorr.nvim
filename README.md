@@ -15,6 +15,8 @@ My Neovim config.
         - Autolaunch an LSP client on filetype open (neovim/nvim-lspconfig)
         - Bridge the gap between mason and lspconfig (williamboman/mason-lspconfig)
     - [X] Treesitter (syntax map for other plugins to use)
+        - [ ] Context (pin relavent context to first line)
+        - [ ] Scope related movements (`vif` for visual select inner function)
     - [X] File explorer (Neo-Tree)
     - [X] Linter
     - [X] Formatter

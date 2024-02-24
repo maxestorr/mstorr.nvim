@@ -1,3 +1,7 @@
+-- TODO: Scoped visual motions, e.g.
+-- TODO: select inner function
+-- TODO: select inner comment
+-- TODO: increment and decrement scope seletion
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
