@@ -45,6 +45,7 @@ return {
         keymap.set("n", "<leader>sm", builtin.man_pages, { desc = "[S]earch [m]an pages" })
         keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [h]elp files" })
         keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[S]earch [b]uffers" })
+        keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [k]eymaps" })
         keymap.set("n", "<leader>sp", ":Telescope prosession<CR>", { desc = "[S]earch vim [p]rosessions" })
 
         telescope.load_extension("fzf")
