@@ -6,10 +6,10 @@ return {
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         "nvim-tree/nvim-web-devicons",
 
+        "ThePrimeagen/git-worktree.nvim",
         "dhruvasagar/vim-prosession", -- Search vim sessions
-        "stevearc/dressing.nvim",     -- Make vim.ui-select/input use telescope
+        "stevearc/dressing.nvim", -- Make vim.ui-select/input use telescope
     },
-
 
     config = function()
         local keymap = vim.keymap
@@ -46,9 +46,30 @@ return {
         keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [h]elp files" })
         keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[S]earch [b]uffers" })
         keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [k]eymaps" })
-        keymap.set("n", "<leader>sp", ":Telescope prosession<CR>", { desc = "[S]earch vim [p]rosessions" })
+        keymap.set(
+            "n",
+            "<leader>sp",
+            ":Telescope prosession<CR>",
+            { desc = "[S]earch vim [p]rosessions", silent = true }
+        )
+        keymap.set(
+            "n",
+            "<leader>sr",
+            ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>",
+            { desc = "[S]earch git wo[r]ktrees", silent = true }
+        )
+        keymap.set(
+            "n",
+            "<leader>sR",
+            ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>",
+            { desc = "Create git wo[R]ktrees", silent = true }
+        )
+        -- <Enter> - switches to that worktree
+        -- <c-d> - deletes that worktree
+        -- <c-f> - toggles forcing of the next deletion
 
         telescope.load_extension("fzf")
         telescope.load_extension("prosession")
+        telescope.load_extension("git_worktree")
     end,
 }

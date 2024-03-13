@@ -50,4 +50,5 @@ My Neovim config.
         - indent-blankline for the guides
         - mini.indentscope for an animation that highlights scope
     - [X] Autopairs
+    - [X] git-worktrees.nvim
 
