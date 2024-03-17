@@ -21,12 +21,13 @@ My Neovim config.
     - [X] Linter
     - [X] Formatter
     - [X] Undotree
+    - [X] Lazygit
+    - [ ] Neogit
 - Nice to have features
     - [X] Telescope
     - [X] Harpoon
     - [X] Which-key
     - [X] Git signs
-    - [X] Lazygit
     - [X] Git blame
     - [X] Status line (lualine)
         - [X] Show lazy plugins that need updating in lualine
