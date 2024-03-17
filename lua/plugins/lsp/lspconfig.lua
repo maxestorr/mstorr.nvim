@@ -62,11 +62,6 @@ return {
             }
         })
 
-        lspconfig.ansiblels.setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
-
         lspconfig.bashls.setup({
             capabilities = capabilities,
             on_attach = on_attach,
@@ -91,7 +86,6 @@ return {
             capabilities = capabilities,
             on_attach = on_attach,
         })
-
 
         lspconfig.jdtls.setup({
             capabilities = capabilities,
