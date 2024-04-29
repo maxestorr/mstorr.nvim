@@ -14,30 +14,32 @@ return {
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
         -- TODO: Look into using default nvim-lspconfig augroup
+        -- TODO: include doc string for below definition
+        -- TODO: Work out the difference between buf.hover and buf.signature_help
+        -- TODO: Change <C-K> keybind, clashes with select window up
+        -- TODO: Look into vim.lsp.buf.METHOD{on_list=on_list} to set custom
+        -- on_list handlers such as trouble, instead of opening default qfixlist
         local on_attach = function(client, bufnr)
             opts.buffer = bufnr
 
-            -- TODO: include doc string for below definition
-            keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-            keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-            -- TODO: Work out the difference between buf.hover and buf.signature_help
-            -- TODO: Change <C-K> keybind, clashes with select window up
-            keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-            keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-            keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-            keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-            keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-            keymap.set('n', '<space>wl', function()
+            keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+            keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+            keymap.set("n", "K", vim.lsp.buf.hover, opts)
+            -- keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+            keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+            keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
+            keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
+            keymap.set("n", "<space>wl", function()
                 print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
             end, opts)
-            keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-            keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-            keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-            keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+            keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
+            keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
+            keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
+            keymap.set("n", "gr", vim.lsp.buf.references, opts)
             -- TODO: This is currently applying format function twice
             -- when multiple LSP clients are attached, e.g. an lua_ls and null-ls
-            keymap.set('n', '<space>f', function()
-                vim.lsp.buf.format { async = true }
+            keymap.set("n", "<space>f", function()
+                vim.lsp.buf.format({ async = true })
             end, opts)
         end
 
@@ -59,7 +61,7 @@ return {
                         },
                     },
                 },
-            }
+            },
         })
 
         lspconfig.bashls.setup({

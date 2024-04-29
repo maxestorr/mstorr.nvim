@@ -28,6 +28,9 @@ return {
                 "pyright",
                 "sqlls",
                 "yamlls",
+                "html",
+                "cssls",
+                "tsserver",
             },
             automatic_installation = true,
         }
