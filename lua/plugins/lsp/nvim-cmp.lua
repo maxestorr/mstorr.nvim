@@ -13,6 +13,7 @@ return {
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
         'saadparwaiz1/cmp_luasnip',
+        'kristijanhusak/vim-dadbod-completion',
 
         -- Snippet engines
         'L3MON4D3/LuaSnip',
@@ -72,7 +73,13 @@ return {
                 { name = 'luasnip' },
                 { name = 'buffer' },
                 { name = 'path' },
-            })
+            }),
+        })
+
+        -- TODO: get autocomplete working
+        cmp.setup.filetype({ "SQL" }, {
+            { name = "vim-dadbod-completion" },
+            { name = "buffer" },
         })
     end,
 }
