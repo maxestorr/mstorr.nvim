@@ -1,9 +1,8 @@
 return {
     "folke/trouble.nvim",
-    branch = "dev",
+    branch = "main",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
-        -- TODO: some of these old keybinds don't work in the new API (e.g. <leader>xx)
         {
             "<leader>xx",
             "<cmd>Trouble diagnostics toggle<cr>",
