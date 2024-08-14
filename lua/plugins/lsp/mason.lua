@@ -37,7 +37,9 @@ return {
 
         require("mason-null-ls").setup({
             ensure_installed = {
-                -- "stylua"
+                "stylua",
+                "isort",
+                "black",
             },
             automatic_installation = true,
             handlers = {},

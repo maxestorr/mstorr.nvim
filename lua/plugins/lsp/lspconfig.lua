@@ -75,6 +75,8 @@ return {
             on_attach = on_attach,
         })
 
+        -- TODO: couldn't work out reading .venv from project root
+        -- opted for pyproject.toml instead
         lspconfig.pyright.setup({
             capabilities = capabilities,
             on_attach = on_attach,
