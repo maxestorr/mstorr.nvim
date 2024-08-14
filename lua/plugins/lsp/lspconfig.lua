@@ -38,6 +38,7 @@ return {
             keymap.set("n", "gr", vim.lsp.buf.references, opts)
             -- TODO: This is currently applying format function twice
             -- when multiple LSP clients are attached, e.g. an lua_ls and null-ls
+            -- https://github.com/neovim/nvim-lspconfig/wiki/Multiple-language-servers-FAQ
             keymap.set("n", "<space>f", function()
                 vim.lsp.buf.format({ async = true })
             end, opts)
