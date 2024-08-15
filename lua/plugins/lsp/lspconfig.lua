@@ -36,11 +36,15 @@ return {
             keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
             keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
             keymap.set("n", "gr", vim.lsp.buf.references, opts)
-            -- TODO: This is currently applying format function twice
-            -- when multiple LSP clients are attached, e.g. an lua_ls and null-ls
+            -- Only format using null-ls
             -- https://github.com/neovim/nvim-lspconfig/wiki/Multiple-language-servers-FAQ
             keymap.set("n", "<space>f", function()
-                vim.lsp.buf.format({ async = true })
+                vim.lsp.buf.format({
+                    filter = function(client)
+                        return client.name == "null-ls"
+                    end,
+                    bufnr = bufnr,
+                })
             end, opts)
         end
 
