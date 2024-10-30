@@ -31,6 +31,7 @@ return {
                 "html",
                 "cssls",
                 "ts_ls",
+                "terraformls",
             },
             automatic_installation = true,
         }
