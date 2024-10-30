@@ -1,5 +1,6 @@
 return {
     "folke/noice.nvim",
+    tag = "stable",
     event = "VeryLazy",
     dependencies = {
         "MunifTanjim/nui.nvim",
@@ -7,7 +8,7 @@ return {
         "hrsh7th/nvim-cmp",
     },
 
-    config = function ()
+    config = function()
         require("noice").setup({
             lsp = {
                 -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
@@ -25,5 +26,5 @@ return {
                 lsp_doc_border = true,
             },
         })
-    end
+    end,
 }
