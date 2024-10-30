@@ -30,7 +30,7 @@ return {
                 "yamlls",
                 "html",
                 "cssls",
-                "tsserver",
+                "ts_ls",
             },
             automatic_installation = true,
         }
