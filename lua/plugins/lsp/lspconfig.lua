@@ -36,14 +36,20 @@ return {
             keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
             keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
             keymap.set("n", "gr", vim.lsp.buf.references, opts)
-            -- Only format using null-ls
-            -- https://github.com/neovim/nvim-lspconfig/wiki/Multiple-language-servers-FAQ
             keymap.set("n", "<space>f", function()
+                local null_ls_sources = require("null-ls.sources")
+                local ft = vim.bo[bufnr].filetype
+                local has_null_ls = #null_ls_sources.get_available(ft, "NULL_LS_FORMATTING") > 0
+
                 vim.lsp.buf.format({
-                    filter = function(client)
-                        return client.name == "null-ls"
-                    end,
                     bufnr = bufnr,
+                    filter = function(client)
+                        if has_null_ls then
+                            return client.name == "null-ls"
+                        else
+                            return true
+                        end
+                    end,
                 })
             end, opts)
         end
@@ -115,10 +121,10 @@ return {
             capabilities = capabilities,
             on_attach = on_attach,
         })
+
         lspconfig.terraformls.setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })
-
     end,
 }
