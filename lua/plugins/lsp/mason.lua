@@ -16,6 +16,32 @@ return {
         local opts = { noremap = true, silent = true }
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
+        -- Autoformat on save
+        -- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+        -- if client.supports_method("textDocument/formatting") then
+        --     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+        --     vim.api.nvim_create_autocmd("BufWritePre", {
+        --         group = augroup,
+        --         buffer = bufnr,
+        --         callback = function()
+        --             local null_ls_sources = require("null-ls.sources")
+        --             local ft = vim.bo[bufnr].filetype
+        --             local has_null_ls = #null_ls_sources.get_available(ft, "NULL_LS_FORMATTING") > 0
+        --
+        --             vim.lsp.buf.format({
+        --                 bufnr = bufnr,
+        --                 filter = function(client)
+        --                     if has_null_ls then
+        --                         return client.name == "null-ls"
+        --                     else
+        --                         return true
+        --                     end
+        --                 end,
+        --             })
+        --         end,
+        --     })
+        -- end
+
         local on_attach = function(client, bufnr)
             opts.buffer = bufnr
 
@@ -126,6 +152,7 @@ return {
             sources = {
                 -- anything not supported by mason
             },
+            on_attach = on_attach,
         })
     end,
 }
