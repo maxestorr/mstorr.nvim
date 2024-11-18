@@ -146,6 +146,24 @@ return {
                     },
                 })
             end,
+
+            ["pyright"] = function()
+                lspconfig.pyright.setup({
+                    capabilities = capabilities,
+                    on_attach = on_attach,
+                    settings = {
+                        python = {
+                            venvPath = ".",
+                            -- Have to set venv folder in pyproject.toml instead
+                            -- venv = ".venv", -- WHY ISNT THIS A SETTING!?!?!?
+                            analysis = {
+                                exclude = { ".venv" },
+                                diagnosticMode = "workspace",
+                            },
+                        },
+                    },
+                })
+            end,
         })
 
         require("null-ls").setup({
