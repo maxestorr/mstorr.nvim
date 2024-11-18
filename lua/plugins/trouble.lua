@@ -1,4 +1,6 @@
 return {
+    -- TODO: Make Trouble the default qflist
+    -- https://github.com/folke/trouble.nvim/blob/dev/docs/examples.md#open-trouble-quickfix-when-the-qf-list-opens
     "folke/trouble.nvim",
     branch = "main",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -24,12 +26,12 @@ return {
             desc = "LSP Definitions / references / ... (Trouble)",
         },
         {
-            "<leader>xL",
+            "<leader>xl",
             "<cmd>Trouble loclist toggle<cr>",
             desc = "Location List (Trouble)",
         },
         {
-            "<leader>xQ",
+            "<leader>xq",
             "<cmd>Trouble qflist toggle<cr>",
             desc = "Quickfix List (Trouble)",
         },
