@@ -60,7 +60,7 @@ return {
             keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
             keymap.set("n", "gr", vim.lsp.buf.references, opts)
 
-            keymap.set("n", "<space>f", function()
+            keymap.set({ "n", "v" }, "<space>f", function()
                 local null_ls_sources = require("null-ls.sources")
                 local ft = vim.bo[bufnr].filetype
                 local has_null_ls = #null_ls_sources.get_available(ft, "NULL_LS_FORMATTING") > 0
