@@ -1,6 +1,7 @@
 return {
     -- TODO: Make Trouble the default qflist
     -- https://github.com/folke/trouble.nvim/blob/dev/docs/examples.md#open-trouble-quickfix-when-the-qf-list-opens
+    -- TODO: Trouble To Do command only works after running trouble quickfix list
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = { use_diagnostic_signs = true },
