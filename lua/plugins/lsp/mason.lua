@@ -59,6 +59,8 @@ return {
             keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
             keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
             keymap.set("n", "gr", vim.lsp.buf.references, opts)
+            keymap.set("n", "]d", vim.diagnostic.goto_next)
+            keymap.set("n", "[d", vim.diagnostic.goto_prev)
 
             keymap.set({ "n", "v" }, "<space>f", function()
                 local null_ls_sources = require("null-ls.sources")
