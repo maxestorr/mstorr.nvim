@@ -1,7 +1,7 @@
 return {
     "folke/todo-comments.nvim",
     depdendencies = { "folke/trouble.nvim" },
-    cmd = { "TodoTrouble", "TodoTelescope" },
+    event = "VeryLazy",
     config = true,
     keys = {
         { "]t", function() require("todo-comments").jump_next() end, desc = "Next todo comment" },
