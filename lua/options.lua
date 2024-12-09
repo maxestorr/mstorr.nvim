@@ -3,43 +3,60 @@
 -- Changing Neovim's option settings
 -- See `:help vim.o`
 
-vim.o.mouse = 'a'
+local opt = vim.opt
 
-vim.o.number = true
-vim.o.relativenumber = true
+opt.mouse = 'a'
 
-vim.o.hlsearch = false
-vim.o.incsearch = true
+opt.number = true
+opt.relativenumber = true
+opt.cursorline = true
 
-vim.o.expandtab = true
-vim.o.tabstop = 8
-vim.o.shiftwidth = 4
+opt.hlsearch = false
+opt.incsearch = true
 
-vim.o.scrolloff = 6
-vim.o.sidescrolloff = 6
-vim.o.wrap = false
+opt.expandtab = true
+opt.tabstop = 8
+opt.shiftwidth = 4
 
-vim.o.ignorecase = true
-vim.o.smartcase = true
+opt.scrolloff = 6
+opt.sidescrolloff = 6
+opt.wrap = false
 
-vim.o.signcolumn = 'yes'
-vim.o.colorcolumn = '80'
-vim.o.laststatus = 3
+opt.ignorecase = true
+opt.smartcase = true
 
-vim.o.splitright = true
-vim.o.splitbelow = true
+opt.signcolumn = 'yes'
+opt.colorcolumn = '80'
+opt.laststatus = 3
 
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
+opt.splitright = true
+opt.splitbelow = true
 
-vim.o.swapfile = false
-vim.o.backup = false
-vim.o.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.o.undofile = true
+opt.updatetime = 250
+opt.timeoutlen = 300
 
-vim.o.completeopt = 'menuone,noselect'
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
 
-vim.o.termguicolors = true
+opt.completeopt = 'menuone,noselect'
+
+opt.termguicolors = true
+
+opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
+opt.list = true -- Show some invisible characters (tabs...
+
+opt.fillchars = {
+  foldopen = "",
+  foldclose = "",
+  fold = " ",
+  foldsep = " ",
+  diff = "╱",
+  eob = " ",
+}
+
+opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboard
 
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
