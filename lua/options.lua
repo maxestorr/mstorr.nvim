@@ -44,7 +44,6 @@ opt.completeopt = 'menuone,noselect'
 
 opt.termguicolors = true
 
-opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
 opt.list = true -- Show some invisible characters (tabs...
 
 opt.fillchars = {
