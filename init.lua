@@ -19,6 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require 'options'
 require 'remaps'
+require 'augroups'
 require("lazy").setup({
     { import = "plugins" },
     { import = "plugins.lsp" },
