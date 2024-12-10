@@ -1,5 +1,5 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -17,9 +17,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require 'options'
-require 'remaps'
-require 'augroups'
+require("options")
+require("remaps")
+require("augroups")
 require("lazy").setup({
     { import = "plugins" },
     { import = "plugins.lsp" },
@@ -36,4 +36,3 @@ require("lazy").setup({
         notify = false,
     },
 })
-

@@ -5,7 +5,7 @@
 
 local opt = vim.opt
 
-opt.mouse = 'a'
+opt.mouse = "a"
 
 opt.number = true
 opt.relativenumber = true
@@ -25,8 +25,8 @@ opt.wrap = false
 opt.ignorecase = true
 opt.smartcase = true
 
-opt.signcolumn = 'yes'
-opt.colorcolumn = '80'
+opt.signcolumn = "yes"
+opt.colorcolumn = "80"
 opt.laststatus = 3
 
 opt.splitright = true
@@ -40,20 +40,19 @@ opt.backup = false
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 
-opt.completeopt = 'menuone,noselect'
+opt.completeopt = "menuone,noselect"
 
 opt.termguicolors = true
 
 opt.list = true -- Show some invisible characters (tabs...
 
 opt.fillchars = {
-  foldopen = "",
-  foldclose = "",
-  fold = " ",
-  foldsep = " ",
-  diff = "╱",
-  eob = " ",
+    foldopen = "",
+    foldclose = "",
+    fold = " ",
+    foldsep = " ",
+    diff = "╱",
+    eob = " ",
 }
 
 opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboard
-

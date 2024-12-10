@@ -1,5 +1,5 @@
 return {
-    'echasnovski/mini.pairs',
+    "echasnovski/mini.pairs",
     version = false,
     config = true,
 }

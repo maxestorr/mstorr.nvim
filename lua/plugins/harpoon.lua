@@ -1,11 +1,16 @@
 return {
-    'ThePrimeagen/harpoon',
+    "ThePrimeagen/harpoon",
     dependencies = {
-        'nvim-lua/plenary.nvim'
+        "nvim-lua/plenary.nvim",
     },
     keys = {
         { "<leader>ha", ':lua require("harpoon.mark").add_file()<CR>', desc = "[H]arpoon [a]dd", silent = true },
-        { "<leader>hf", ':lua require("harpoon.ui").toggle_quick_menu()<CR>', desc = "[H]arpoon [f]ind files", silent = true },
+        {
+            "<leader>hf",
+            ':lua require("harpoon.ui").toggle_quick_menu()<CR>',
+            desc = "[H]arpoon [f]ind files",
+            silent = true,
+        },
 
         { "<leader>1", ':lua require("harpoon.ui").nav_file(1)<CR>', desc = "[H]arpoon file [1]", silent = true },
         { "<leader>2", ':lua require("harpoon.ui").nav_file(2)<CR>', desc = "[H]arpoon file [2]", silent = true },

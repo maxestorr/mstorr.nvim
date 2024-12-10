@@ -51,4 +51,3 @@ vnoremap("<Space>", "<Nop>", silent)
 -- Navigate properly through wrapped lines with j and k
 nnoremap("k", "v:count == 0 ? 'gk' : 'k'", expr)
 nnoremap("j", "v:count == 0 ? 'gj' : 'j'", expr)
-

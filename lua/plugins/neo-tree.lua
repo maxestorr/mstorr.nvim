@@ -7,7 +7,7 @@ return {
         "MunifTanjim/nui.nvim",
     },
     keys = {
-        { "<leader>e", ":Neotree toggle<CR>", desc = "Toggle filetree [e]xplorer", silent = true }
+        { "<leader>e", ":Neotree toggle<CR>", desc = "Toggle filetree [e]xplorer", silent = true },
     },
     opts = {
         filesystem = {

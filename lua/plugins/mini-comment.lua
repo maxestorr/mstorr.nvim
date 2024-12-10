@@ -1,5 +1,5 @@
 return {
-    'echasnovski/mini.comment',
+    "echasnovski/mini.comment",
     version = false,
     config = true,
 }

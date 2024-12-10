@@ -2,7 +2,7 @@
 --      but I'm not sure about the best place to do this yet
 --      this sets vim's default notifications to use nvim-notify
 return {
-    'rcarriga/nvim-notify',
+    "rcarriga/nvim-notify",
     opts = {
         timeout = 3000,
         max_height = function()
