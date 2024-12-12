@@ -6,6 +6,8 @@ return {
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         "nvim-tree/nvim-web-devicons",
 
+        -- FIX: After using clone-bare to clone a repo, new branches don't appear to update properly
+        -- and throw a git error
         "ThePrimeagen/git-worktree.nvim",
         "dhruvasagar/vim-prosession", -- Search vim sessions
         "stevearc/dressing.nvim", -- Make vim.ui-select/input use telescope
