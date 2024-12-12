@@ -1,11 +1,9 @@
+-- TODO: This repo is no longer supported, look for alternative
 return {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
-    build = function()
-        vim.fn["mkdp#util#install"]()
-    end,
-
+    build = ":call mkdp#util#install()",
     config = function()
         local keymap = vim.keymap
 
