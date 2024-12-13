@@ -1,3 +1,5 @@
+-- TODO: THERE'S A FUCKING HARPOON 2 I DIDN'T KNOW ABOUT??
+-- https://github.com/ThePrimeagen/harpoon/tree/harpoon2
 return {
     "ThePrimeagen/harpoon",
     dependencies = {
