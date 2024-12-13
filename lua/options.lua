@@ -56,3 +56,5 @@ opt.fillchars = {
 }
 
 opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboard
+
+vim.filetype.add({ extension = { tf = "terraform" } })
