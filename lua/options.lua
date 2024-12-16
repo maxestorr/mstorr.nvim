@@ -45,6 +45,7 @@ opt.completeopt = "menuone,noselect"
 opt.termguicolors = true
 
 opt.list = true -- Show some invisible characters (tabs...
+opt.confirm = true -- Show confirm menu when quitting
 
 opt.fillchars = {
     foldopen = "",
