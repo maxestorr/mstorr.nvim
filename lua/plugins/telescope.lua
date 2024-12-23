@@ -43,6 +43,13 @@ return {
         })
 
         keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch for [f]iles" })
+        -- TODO: Workout why this fails using the builtin method
+        keymap.set(
+            "n",
+            "<leader>sF",
+            ":lua require('telescope.builtin').find_files({hidden=true, no_ignore=true})<cr>",
+            { desc = "[S]earch for all [F]iles" }
+        )
         keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch via [g]rep" })
         keymap.set("n", "<leader>sm", builtin.man_pages, { desc = "[S]earch [m]an pages" })
         keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [h]elp files" })
