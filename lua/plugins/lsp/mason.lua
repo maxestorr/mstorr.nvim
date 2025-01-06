@@ -1,3 +1,4 @@
+-- TODO: Refactor this to not return several configs in a single spec
 return {
     "williamboman/mason.nvim",
     dependencies = {

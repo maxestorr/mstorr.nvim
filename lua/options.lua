@@ -4,6 +4,7 @@
 -- See `:help vim.o`
 
 local opt = vim.opt
+local wopt = vim.wo
 
 opt.mouse = "a"
 
@@ -55,6 +56,12 @@ opt.fillchars = {
     diff = "╱",
     eob = " ",
 }
+
+-- Fold using treesitter
+wopt.foldlevel = 99
+wopt.foldmethod = 'expr'
+wopt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+
 
 opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboard
 
