@@ -2,8 +2,20 @@ return {
 
     {
         "saghen/blink.cmp",
-        dependencies = "rafamadriz/friendly-snippets",
         version = "*",
+
+        dependencies = {
+            "rafamadriz/friendly-snippets",
+            "saadparwaiz1/cmp_luasnip",
+            {
+                "kristijanhusak/vim-dadbod-completion",
+                ft = { "sql", "mysql", "plsql" },
+                lazy = true,
+            },
+            -- Snippet engines
+            -- "L3MON4D3/LuaSnip",
+        },
+
         ---@module 'blink.cmp'
         ---@type blink.cmp.Config
         opts = {
@@ -14,8 +26,12 @@ return {
             },
             sources = {
                 default = { "lsp", "path", "snippets", "buffer" },
+                providers = {
+                    dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+                },
             },
         },
+
         opts_extend = { "sources.default" },
     },
 
