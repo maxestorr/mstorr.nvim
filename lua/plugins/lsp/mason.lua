@@ -161,7 +161,9 @@ return {
                             -- venv = ".venv", -- WHY ISNT THIS A SETTING!?!?!?
                             analysis = {
                                 exclude = { ".venv" },
-                                diagnosticMode = "workspace",
+                                -- workspace mode lags on large projects
+                                -- diagnosticMode = "workspace",
+                                diagnosticMode = "openFilesOnly",
                             },
                         },
                     },
