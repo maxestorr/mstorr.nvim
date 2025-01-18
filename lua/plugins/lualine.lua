@@ -1,10 +1,13 @@
 return {
     "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons", "folke/noice.nvim" },
+    dependencies = {
+        "nvim-tree/nvim-web-devicons",
+        -- "folke/noice.nvim",
+    },
 
     config = function()
         local lualine = require("lualine")
-        local noice = require("noice")
+        -- local noice = require("noice")
         local lazy_status = require("lazy.status")
 
         -- Display message in statusline when recording macro
@@ -33,11 +36,11 @@ return {
                     },
                 },
                 lualine_x = {
-                    {
-                        noice.api.statusline.mode.get,
-                        cond = noice.api.statusline.mode.has,
-                        color = { fg = "#ff9e64" },
-                    },
+                    -- {
+                    --     noice.api.statusline.mode.get,
+                    --     cond = noice.api.statusline.mode.has,
+                    --     color = { fg = "#ff9e64" },
+                    -- },
                     {
                         lazy_status.updates,
                         cond = lazy_status.has_updates,
