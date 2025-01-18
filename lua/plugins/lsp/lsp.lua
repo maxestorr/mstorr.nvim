@@ -1,46 +1,10 @@
 return {
-
-    {
-        "saghen/blink.cmp",
-        version = "*",
-
-        dependencies = {
-            "rafamadriz/friendly-snippets",
-            "saadparwaiz1/cmp_luasnip",
-            {
-                "kristijanhusak/vim-dadbod-completion",
-                ft = { "sql", "mysql", "plsql" },
-                lazy = true,
-            },
-            -- Snippet engines
-            -- "L3MON4D3/LuaSnip",
-        },
-
-        ---@module 'blink.cmp'
-        ---@type blink.cmp.Config
-        opts = {
-            keymap = { preset = "default" },
-            appearance = {
-                use_nvim_cmp_as_default = true,
-                nerd_font_variant = "mono",
-            },
-            sources = {
-                default = { "lsp", "path", "snippets", "buffer" },
-                providers = {
-                    dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
-                },
-            },
-        },
-
-        opts_extend = { "sources.default" },
-    },
-
     {
         "neovim/nvim-lspconfig",
         dependencies = {
             "saghen/blink.cmp",
+            "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
-            "neovim/nvim-lspconfig",
         },
 
         event = { "BufReadPre", "BufNewFile" },
@@ -138,69 +102,12 @@ return {
                     })
                 end,
             })
-        end,
 
-        -- -- example using `opts` for defining servers
-        -- opts = {
-        --     servers = {
-        --         lua_ls = {},
-        --     },
-        -- },
-
-        -- config = function(_, opts)
-        --     local lspconfig = require("lspconfig")
-        --     for server, config in pairs(opts.servers) do
-        --         -- passing config.capabilities to blink.cmp merges with the capabilities in your
-        --         -- `opts[server].capabilities, if you've defined it
-        --         config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-        --         lspconfig[server].setup(config)
-        --     end
-        -- end,
-    },
-
-    {
-        "williamboman/mason.nvim",
-
-        dependencies = {
-            "williamboman/mason-lspconfig.nvim",
-            "jay-babu/mason-null-ls.nvim",
-            { "nvimtools/none-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
-        },
-
-        config = function()
-            require("mason").setup({
-                ui = {
-                    icons = {
-                        package_installed = "✓",
-                        package_pending = "➜",
-                        package_uninstalled = "✗",
-                    },
+            require("null-ls").setup({
+                sources = {
+                    -- anything not supported by mason
                 },
-            })
-
-            require("mason-lspconfig").setup({
-                ensure_installed = {
-                    "lua_ls",
-                    "pyright",
-                    "bashls",
-                    "sqlls",
-                    "jsonls",
-                    "yamlls",
-                    "terraformls",
-                    "dockerls",
-                },
-                automatic_installation = true,
-            })
-
-            require("mason-null-ls").setup({
-                ensure_installed = {
-                    "stylua",
-                    "isort",
-                    "black",
-                    "yamlfmt",
-                },
-                automatic_installation = true,
-                handlers = {},
+                on_attach = on_attach,
             })
         end,
     },
