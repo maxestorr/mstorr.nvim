@@ -7,7 +7,7 @@ return {
 
         gitblame.setup({
             enabled = false,
-            keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>"),
+            keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>", { silent = true }),
         })
     end,
 }

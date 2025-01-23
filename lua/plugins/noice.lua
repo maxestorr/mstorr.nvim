@@ -1,4 +1,5 @@
 return {
+    -- TODO: Look into snack.notify
     "folke/noice.nvim",
     event = "VeryLazy",
     dependencies = {
