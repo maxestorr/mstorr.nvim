@@ -1,3 +1,9 @@
+-- TODO: nvim-cmp used to intelligently recommend params when calling a function
+-- before I even type anything, whereas blink.cmp is recommending from buffer first,
+-- how can I fix this?
+-- TODO: nvim-cmp also had a pop-up for the function/parameter signature
+-- when a completion entry was selected, enable this again
+
 return {
     {
         "saghen/blink.cmp",
