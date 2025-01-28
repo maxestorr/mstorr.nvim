@@ -5,7 +5,7 @@ return {
     opts = {},
     dependencies = { { "echasnovski/mini.icons", opts = {} } },
     keys = {
-        { "-", ":Oil --float<cr>", desc = "Open current directory in oil" },
+        { "-", ":Oil --float<cr>", desc = "Open current directory in oil", silent = true },
     },
 
     config = function()
