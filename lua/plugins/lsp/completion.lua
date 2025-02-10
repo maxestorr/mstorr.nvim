@@ -1,6 +1,9 @@
 -- TODO: nvim-cmp used to intelligently recommend params when calling a function
 -- before I even type anything, whereas blink.cmp is recommending from buffer first,
 -- how can I fix this?
+-- NOTE: It turns out ctrl+n triggers neovim's default completion, which is buffer
+-- only, not blink.cmp. I was using supertab with nvim-cmp which would trigger the
+-- plugin not neovim's default
 -- TODO: nvim-cmp also had a pop-up for the function/parameter signature
 -- when a completion entry was selected, enable this again
 
