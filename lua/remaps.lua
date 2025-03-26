@@ -36,10 +36,6 @@ vnoremap("<", "<gv", { desc = "Dedent selection" })
 vnoremap("J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
 vnoremap("K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
 
--- FIX: seems to shift selection left one character when done after visually selecting
--- only when used on the module name Python imports e.g. my.test.module_name
-xnoremap("<leader>p", '"_dP', { desc = "Paste without overriding current buffer" })
-
 nnoremap("<leader>y", [["+y]], { desc = "Copy selection to clipboard" })
 vnoremap("<leader>y", [["+y]], { desc = "Copy selection to clipboard" })
 nnoremap("<leader>Y", [["+Y]], { desc = "Copy selection to clipboard" })
