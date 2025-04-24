@@ -11,6 +11,7 @@ return {
         "ThePrimeagen/git-worktree.nvim",
         "dhruvasagar/vim-prosession", -- Search vim sessions
         "stevearc/dressing.nvim", -- Make vim.ui-select/input use telescope
+        "nvim-telescope/telescope-live-grep-args.nvim",
     },
 
     config = function()
@@ -18,6 +19,7 @@ return {
         local telescope = require("telescope")
         local builtin = require("telescope.builtin")
         local telescopeConfig = require("telescope.config")
+        local lga_actions = require("telescope-live-grep-args.actions")
 
         -- Clone the default Telescope configuration
         local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
@@ -40,6 +42,20 @@ return {
                     find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
                 },
             },
+            extensions = {
+                live_grep_args = {
+                    auto_quoting = true, -- enable/disable auto-quoting
+                    -- define mappings, e.g.
+                    mappings = { -- extend mappings
+                        i = {
+                            ["<C-k>"] = lga_actions.quote_prompt(),
+                            ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+                            -- freeze the current list and start a fuzzy search in the frozen list
+                            ["<C-space>"] = lga_actions.to_fuzzy_refine,
+                        },
+                    },
+                },
+            },
         })
 
         keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch for [f]iles" })
@@ -51,6 +67,7 @@ return {
             { desc = "[S]earch for all [F]iles" }
         )
         keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch via [g]rep" })
+        keymap.set("n", "<leader>sG", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
         keymap.set("n", "<leader>sm", builtin.man_pages, { desc = "[S]earch [m]an pages" })
         keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [h]elp files" })
         keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[S]earch [b]uffers" })
@@ -80,5 +97,6 @@ return {
         telescope.load_extension("fzf")
         telescope.load_extension("prosession")
         telescope.load_extension("git_worktree")
+        telescope.load_extension("live_grep_args")
     end,
 }
