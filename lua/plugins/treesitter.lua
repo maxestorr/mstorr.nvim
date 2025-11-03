@@ -30,7 +30,7 @@ return {
         opts = {
             enable = true,
             multiwindow = false,
-            max_lines = 1,
+            max_lines = 2,
             min_window_height = 0,
             line_numbers = true,
             multiline_threshold = 20,

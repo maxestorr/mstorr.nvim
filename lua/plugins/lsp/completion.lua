@@ -21,10 +21,9 @@ return {
         opts = {
             keymap = { preset = "default" },
             signature = {
-                -- TODO: There's some annoying overlap with windows here
-                enabled = false,
+                enabled = true,
                 window = {
-                    show_documentation = false,
+                    show_documentation = true,
                 },
             },
             appearance = {
