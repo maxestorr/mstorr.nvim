@@ -1,6 +1,5 @@
 return {
     "linux-cultist/venv-selector.nvim",
-    branch = "regexp",
     event = "VeryLazy",
     dependencies = {
         "neovim/nvim-lspconfig",
