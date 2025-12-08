@@ -66,4 +66,4 @@ wopt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboard
 
 vim.filetype.add({ extension = { tf = "terraform" } })
-vim.lsp.set_log_level("off")  -- Disable lsp logs, enable for debugging
+vim.lsp.log.set_level("off")  -- Disable lsp logs, enable for debugging
