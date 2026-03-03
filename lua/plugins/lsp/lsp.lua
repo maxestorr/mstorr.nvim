@@ -14,11 +14,10 @@ return {
             local blink_cmp = require("blink.cmp")
 
             local keymap = vim.keymap
-            local opts = { noremap = true, silent = true }
             local capabilities = blink_cmp.get_lsp_capabilities()
 
             local on_attach = function(client, bufnr)
-                opts.buffer = bufnr
+                local opts = { noremap = true, silent = true, buffer = bufnr }
 
                 keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
                 keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -51,56 +50,58 @@ return {
                 end, opts)
             end
 
-            require("mason-lspconfig").setup_handlers({
-                -- default handler
-                function(server_name)
-                    require("lspconfig")[server_name].setup({
-                        capabilities = capabilities,
-                        on_attach = on_attach,
-                    })
-                end,
+            require("mason-lspconfig").setup({
+                handlers = {
+                    -- default handler
+                    function(server_name)
+                        require("lspconfig")[server_name].setup({
+                            capabilities = capabilities,
+                            on_attach = on_attach,
+                        })
+                    end,
 
-                -- custom handlers
-                ["lua_ls"] = function()
-                    lspconfig.lua_ls.setup({
-                        capabilities = capabilities,
-                        on_attach = on_attach,
-                        settings = {
-                            Lua = {
-                                diagonstics = {
-                                    globals = { "vim" },
-                                },
-                                workspace = {
-                                    checkThirdParty = false,
-                                    library = {
-                                        [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                                        [vim.fn.stdpath("config") .. "/lua"] = true,
+                    -- custom handlers
+                    ["lua_ls"] = function()
+                        lspconfig.lua_ls.setup({
+                            capabilities = capabilities,
+                            on_attach = on_attach,
+                            settings = {
+                                Lua = {
+                                    diagnostics = {
+                                        globals = { "vim" },
+                                    },
+                                    workspace = {
+                                        checkThirdParty = false,
+                                        library = {
+                                            [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                                            [vim.fn.stdpath("config") .. "/lua"] = true,
+                                        },
                                     },
                                 },
                             },
-                        },
-                    })
-                end,
+                        })
+                    end,
 
-                ["pyright"] = function()
-                    lspconfig.pyright.setup({
-                        capabilities = capabilities,
-                        on_attach = on_attach,
-                        settings = {
-                            python = {
-                                venvPath = ".",
-                                -- Have to set venv folder in pyproject.toml instead
-                                -- venv = ".venv", -- WHY ISNT THIS A SETTING!?!?!?
-                                analysis = {
-                                    exclude = { ".venv" },
-                                    -- workspace mode lags on large projects
-                                    -- diagnosticMode = "workspace",
-                                    diagnosticMode = "openFilesOnly",
+                    ["pyright"] = function()
+                        lspconfig.pyright.setup({
+                            capabilities = capabilities,
+                            on_attach = on_attach,
+                            settings = {
+                                python = {
+                                    venvPath = ".",
+                                    -- Have to set venv folder in pyproject.toml instead
+                                    -- venv = ".venv", -- WHY ISNT THIS A SETTING!?!?!?
+                                    analysis = {
+                                        exclude = { ".venv" },
+                                        -- workspace mode lags on large projects
+                                        -- diagnosticMode = "workspace",
+                                        diagnosticMode = "openFilesOnly",
+                                    },
                                 },
                             },
-                        },
-                    })
-                end,
+                        })
+                    end,
+                },
             })
 
             require("null-ls").setup({
