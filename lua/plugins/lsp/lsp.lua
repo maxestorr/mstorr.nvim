@@ -14,11 +14,10 @@ return {
             local blink_cmp = require("blink.cmp")
 
             local keymap = vim.keymap
-            local opts = { noremap = true, silent = true }
             local capabilities = blink_cmp.get_lsp_capabilities()
 
             local on_attach = function(client, bufnr)
-                opts.buffer = bufnr
+                local opts = { noremap = true, silent = true, buffer = bufnr }
 
                 keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
                 keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -67,7 +66,7 @@ return {
                         on_attach = on_attach,
                         settings = {
                             Lua = {
-                                diagonstics = {
+                                diagnostics = {
                                     globals = { "vim" },
                                 },
                                 workspace = {
