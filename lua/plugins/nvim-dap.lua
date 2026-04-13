@@ -16,7 +16,7 @@ return {
             local keymap = vim.keymap
 
             ui.setup()
-            dap_python.setup("~/.local/share/nvim/mason/bin/debugpy")
+            dap_python.setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
             dap_virtual_text.setup()
 
             -- require("nvim-dap-virtual-text").setup({
@@ -36,6 +36,7 @@ return {
             --     end,
             -- })
 
+            keymap.set("n", "<space>du", ui.toggle, { desc = "Debug toggle UI" })
             keymap.set("n", "<space>b", dap.toggle_breakpoint, { desc = "Debug toggle breakpoint" })
             keymap.set("n", "<space>dr", dap.run_to_cursor, { desc = "Debug run to cursor" })
 
@@ -60,12 +61,12 @@ return {
             dap.listeners.before.launch.dapui_config = function()
                 ui.open()
             end
-            dap.listeners.before.event_terminated.dapui_config = function()
-                ui.close()
-            end
-            dap.listeners.before.event_exited.dapui_config = function()
-                ui.close()
-            end
+            -- dap.listeners.before.event_terminated.dapui_config = function()
+            --     ui.close()
+            -- end
+            -- dap.listeners.before.event_exited.dapui_config = function()
+            --     ui.close()
+            -- end
         end,
     },
 }
