@@ -51,4 +51,7 @@ nnoremap("k", "v:count == 0 ? 'gk' : 'k'", expr)
 nnoremap("j", "v:count == 0 ? 'gj' : 'j'", expr)
 
 -- Easy quit
-nnoremap("<leader>q", "<cmd>qa<cr>", { desc="Quit all" })
+nnoremap("<leader>q", "<cmd>qa<cr>", { desc = "Quit all" })
+
+-- Yank fielname to clipboard
+nnoremap("yp", [[<cmd>let @+ = expand("%")<cr>]], { desc = "[Y]ank file[p]ath to clipboard" })
